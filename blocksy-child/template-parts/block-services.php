@@ -10,13 +10,17 @@ if (!defined('ABSPATH')) {
 
 /*ACF fields*/
 $page_id = get_the_ID();
-$services_title = get_field('services_title', $page_id);
+$fields_prefix = is_archive() ? 'options' : $page_id;
+$fields_index = is_archive() ? '_' . $page_id : '';
+$services_title = is_singular('services') ? 'Другие наши услуги' : get_field('services_title' . $fields_index, $fields_prefix);
+$block_about_image = get_field('block_about_image'. $fields_index, $fields_prefix);
 $arg_services = array(
     'orderby' => 'name',
     'order' => 'DESC',
     'posts_per_page' => 50,
     'post_type' => 'services',
     'post_status' => 'publish',
+    'post__not_in' => array( $id ), // Исключим текущий пост
 );
 
 $query_services = new WP_Query($arg_services);
@@ -24,12 +28,15 @@ $query_services = new WP_Query($arg_services);
 if ($query_services->have_posts()) {
     ?>
 
-    <section class="services">
+    <section id="services" class="services <?php if (is_page('about') || is_page('gallery') || is_archive('actions')) { ?>overlay dark position-relative<?php } ?>" <?php if ($block_about_image) { ?> style="background-image: url('<?php echo $block_about_image['url']; ?>')" <?php } ?>>
         <div class="container">
             <?php
-            if ($services_title) {
-                echo '<h2 class="services__title">' . $services_title . '</h2>';
-            }
+            if ($services_title) { ?>
+                <h2 data-aos="fade-right" data-aos-offset="200" data-aos-delay="0" data-aos-duration="900"
+                    data-aos-easing="linear" data-aos-once="true" data-aos-anchor-placement="top-left" class="services__title">
+                    <?php echo $services_title; ?>
+                </h2>
+            <?php }
             ?>
 
             <ul class="services__list d-grid grid-three">
@@ -74,6 +81,10 @@ if ($query_services->have_posts()) {
                     wp_reset_postdata() ?>
                 <?php } ?>
             </ul>
+
+            <?php if (is_page('about') || is_page('gallery') ) {
+                get_template_part('template-parts/booking', 'button');
+            } ?>
         </div>
     </section>
 

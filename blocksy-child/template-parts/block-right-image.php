@@ -63,14 +63,22 @@ if ($right_image_title) { ?>
         <div class="right-image__wrap right-wrap">
             <?php
             if ($bar_text) {
-                echo '<div class="gold-bar-text position-relative"><div>' . $bar_text . '</div></div>';
+                echo '<div class="scene"><div data-depth="0.8" class="gold-bar-text position-relative"><div>' . $bar_text . '</div></div></div>';
             }
-            if ($right_image) {
-                echo '<figure class="right-wrap__image position-relative d-none d-md-block"><img src="' . $right_image['url'] . '" alt="' . $right_image['alt'] . '"></figure>';
-            }
-            if ($right_image_underground) {
-                echo '<figure class="right-wrap__underground d-none d-md-block"><img src="' . $right_image_underground['url'] . '" alt="' . $right_image_underground['alt'] . '"></figure>';
-            }
+            if ($right_image) { ?>
+                <figure data-aos="fade-left" data-aos-offset="100" data-aos-delay="0" data-aos-duration="900"
+                    data-aos-easing="linear" data-aos-once="false" data-aos-anchor-placement="top-center"
+                    class="right-wrap__image position-relative d-none d-md-block">
+                    <img src="<?php echo $right_image['url']; ?>" alt="<?php echo $right_image['alt']; ?>">
+                </figure>
+            <?php }
+            if ($right_image_underground) { ?>
+                <figure data-aos="fade-up" data-aos-offset="150" data-aos-delay="0" data-aos-duration="1200"
+                data-aos-easing="linear" data-aos-once="false" data-aos-anchor-placement="top-center"
+                class="right-wrap__underground d-none d-md-block">
+                    <img src="<?php echo $right_image_underground['url']; ?>" alt="<?php echo $right_image_underground['alt']; ?>">
+                </figure>
+            <?php }
             ?>
         </div>
     </section>

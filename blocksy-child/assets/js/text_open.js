@@ -19,16 +19,16 @@ jQuery(function($) {
         })
     });
 
-    const all_types_buttons = $('.js-item-content input.button');
+    // const all_types_buttons = $('.js-item-content input.button');
 
-    all_types_buttons.each(function(){
-        $(this).on('click', function(e) {  
-            let tariff_wrapper = $(this).closest('.route-item');    
-            let tariff_title = tariff_wrapper.attr('data-name');
-            console.log(tariff_title); 
-            $('.hide-title').val(tariff_title);
-        });
-    });
+    // all_types_buttons.each(function(){
+    //     $(this).on('click', function(e) {  
+    //         let tariff_wrapper = $(this).closest('.route-item');    
+    //         let tariff_title = tariff_wrapper.attr('data-name');
+    //         console.log(tariff_title); 
+    //         $('.hide-title').val(tariff_title);
+    //     });
+    // });
 
    
 });

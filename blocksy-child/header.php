@@ -23,10 +23,23 @@
 	<?php do_action('blocksy:head:end') ?>
 </head>
 
+<?php
+ob_start();
+blocksy_output_header();
+$global_header = ob_get_clean();
+?>
 
 <body <?php body_class(); ?> <?php echo blocksy_body_attr() ?>>
 
+	<a class="skip-link show-on-focus" href="<?php echo apply_filters('blocksy:head:skip-to-content:href', '#main') ?>">
+		<?php echo __('Skip to content', 'blocksy'); ?>
+	</a>
 
+	<?php
+	if (function_exists('wp_body_open')) {
+		wp_body_open();
+	}
+	?>
 
 	<?php
 	$logo_color = get_field('logo_color', 'options');
@@ -35,7 +48,7 @@
 
 	?>
 
-	<header class="header">
+	<header class="<?php if (is_front_page()) { ?>header<?php } else { ?>header other-pages<?php } ?>">
 		<div class="container-fluid">
 			<div class="header__wrapper d-flex justify-content-start  justify-content-lg-between align-items-center">
 				<?php get_template_part('template-parts/nav', 'menu'); ?>
@@ -46,8 +59,7 @@
 						<img src="<?php echo $logo_color['url']; ?>" alt="<?php echo $logo_color['alt']; ?>">
 					<?php } ?>
 				</a>
-
-				<!-- Здесь вставляем template-part -->
+				
 				<?php
 				if (is_front_page()) {
 					if ($tel && $phone_num) { ?>
@@ -58,9 +70,14 @@
 						</span>
 					<?php }
 					;
-					echo '<button class="button col-auto d-none d-lg-block">забронировать тур</button>';
+					echo '<div class="col-auto d-none d-lg-block">';
+					get_template_part('template-parts/booking', 'button');
+					echo '</div>';
+
 				} else {
-					get_template_part('template-parts/nav', 'menu');
+					echo '<div class="other-pages-menu d-none d-xl-block">';
+					echo estore_primary_menu();
+					echo '</div>';
 
 					if ($tel && $phone_num) { ?>
 						<span class="header__tel col-auto">
@@ -69,8 +86,9 @@
 							</a>
 						</span>
 					<?php }
-					;
-				} ?>
+					
+				}
+				?>
 			</div>
 		</div>
 	</header>

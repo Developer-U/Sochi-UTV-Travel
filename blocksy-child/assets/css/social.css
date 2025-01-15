@@ -28,7 +28,7 @@
     transition: all .25s ease-in-out;
 }
 
-.hero-box__buttons .social__link.whatsapp {
+.hero-box__buttons .social__link.whatsapp, .footer .social__link.whatsapp, .top-block .social__link.whatsapp {
     background-image: url('../img/whatsapp-white.svg');
 }
 
@@ -39,7 +39,7 @@
     transition: all .25s ease-in-out;
 }
 
-.hero-box__buttons .social__link.telegram {
+.hero-box__buttons .social__link.telegram, .footer .social__link.telegram, .top-block .social__link.telegram {
     background-image: url('../img/Telegram-white.svg');
 }
 
@@ -50,7 +50,7 @@
     transition: all .25s ease-in-out;
 }
 
-.hero-box__buttons .social__link.vk {
+.hero-box__buttons .social__link.vk, .footer .social__link.vk, .top-block .social__link.vk {
     background-image: url('../img/vk-white.svg');
 }
 

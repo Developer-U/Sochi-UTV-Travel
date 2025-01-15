@@ -36,17 +36,23 @@ $hero_title = get_field('hero_title');
     <!-- Left block menu -->
     <div class="hero-box__left hero-left d-none d-xl-flex flex-column justify-content-end">
         <?php
-        estore_primary_menu();
+        estore_left_sidebar_menu();
 
         get_template_part('template-parts/social');
         ?>
     </div>
 
     <div class="container-fluid hero__box hero-box d-grid gap-3">
-        <button class="button col-auto hero-box__button d-block d-lg-none">забронировать тур</button>
+        <?php
+        echo '<div class="col-auto hero-box__button d-block d-lg-none">';
+        get_template_part('template-parts/booking', 'button');
+        echo '</div>';
+        ?>
 
         <div class="hero-box__heading hero-title-box d-flex align-items-start justify-content-end">
-            <span class="hero-title-box__plashka plashka fire">
+            <span data-aos="fade-right" data-aos-offset="0" data-aos-delay="0" data-aos-duration="1000"
+                data-aos-easing="linear" data-aos-once="true" data-aos-anchor-placement="right-bottom"
+                class="hero-title-box__plashka plashka fire">
                 <p class="hero-title-box__attention">
                     Горячие обеды<br>на гриле!
                 </p>
@@ -58,7 +64,7 @@ $hero_title = get_field('hero_title');
             } ?>
         </div>
 
-        <div class="hero-box__buttons hero-title-box d-flex justify-content-between">            
+        <div class="hero-box__buttons hero-title-box d-flex justify-content-between">
             <?php
             get_template_part('template-parts/buttons', 'block');
             ?>

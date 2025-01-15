@@ -26,7 +26,7 @@ $phone_num = get_field('tel', 'options');
                 fill="none" />
         </svg>
     </button>
-    <div class="navbar-content">
+    <div class="navbar-content js-submenu-open">
         <div class="header-center__bottom header-bottom d-flex flex-column align-items-start justify-content-between">
 
             <?php

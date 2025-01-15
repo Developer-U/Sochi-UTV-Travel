@@ -24,13 +24,13 @@ if (($button_first['title'] && $button_first['link']) || ($button_second['title'
         <div class="buttons-block d-flex gap-2">
             <?php
             if ($button_first['title'] && $button_first['link']) {
-                echo '<a class="button gold" href=" ' . $button_first['link'] . ' " >' . $button_first['title'] . '</a>';
+                echo '<a class="button gold" href=" ' . $button_first['link'] . ' " target="_blank">' . $button_first['title'] . '</a>';
             }
             if ($button_second['title'] && $button_second['link']) {
-                echo '<a class="button green d-none d-md-flex" href=" ' . $button_second['link'] . ' " >' . $button_second['title'] . '</a>';
+                echo '<a class="button green d-none d-md-flex" href=" ' . $button_second['link'] . ' " target="_blank">' . $button_second['title'] . '</a>';
             }
             if ($button_third['title'] && $button_third['link']) {
-                echo '<a class="button dark-green d-none d-md-flex" href=" ' . $button_third['link'] . ' " >' . $button_third['title'] . '</a>';
+                echo '<a class="button dark-green d-none d-md-flex" href=" ' . $button_third['link'] . ' " target="_blank">' . $button_third['title'] . '</a>';
             }
             ?>
         </div>

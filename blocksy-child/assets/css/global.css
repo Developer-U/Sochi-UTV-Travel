@@ -72,6 +72,10 @@ html, body, body p {
     font-family: var(--gotham_regular);
 }
 
+html, body {
+    overflow-x: auto;
+}
+
 body {
     background-color: var(--white);
     color: var(--black);
@@ -96,14 +100,14 @@ body .container {
 }
 
 body .container-fluid {
-    max-width: 1720px;
+    max-width: 1690px;
 }
 
 figure {
     overflow: hidden;
 }
 
-figure img {
+figure img, a.gallery-tab-list__image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -135,6 +139,20 @@ body .button {
     min-height: 48px;
 }
 
+body .button.more-btn {
+    margin: 50px auto 0;
+    min-width: 272px;
+}
+
+body .top-box .button {
+    margin-bottom: 0;
+}
+
+body .button.hero-box__button {
+    position: relative;
+    z-index: 4;
+}
+
 body .button.attention {
     -webkit-box-shadow: 0px 0px 15px 7px rgba(227, 90, 77, 0.8);
     -moz-box-shadow: 0px 0px 15px 7px rgba(227, 90, 77, 0.8);
@@ -162,6 +180,10 @@ body .button:hover {
     border-color: var(--black);
 }
 
+body .button.gallery-tab-btns__button:hover {
+    background: var(--black);
+}
+
 body .button.active {
     background: var(--red_active);
     border-color: var(--black)
@@ -184,18 +206,37 @@ section {
     background-size: cover;
 }
 
+.single section.routes {
+    padding-top: 120px;
+}
+
 section.hero {
     padding-top: 0;
     padding-bottom: 0;
 }
 
-section.reviews {
+section.about {
+    padding-bottom: 86px;
+}
+
+section.contacts {
+    padding-top: 168px;
+    padding-bottom: 70px;
+}
+
+section.single-services {
+    padding-top: 82px;
+    padding-bottom: 78px;
+}
+
+section.reviews, section.single-routes, section.route-geographics {
     padding-top: 0;
 }
 
 section.gradient-bg {
     background: linear-gradient(to bottom, var(--grey), var(--white));
 }
+
 section.top-lightness::before {
     content: "";
     display: block;
@@ -204,12 +245,59 @@ section.top-lightness::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, var(--grey) 30%, rgba(245,245,245,.2));
+    background: linear-gradient(to bottom, var(--grey) 30%, rgba(245, 245, 245, .2));
 }
 
-section.top-lightness .container {
+section.route-geographics::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(217, 217, 217, 0.8);
+}
+
+section.top-lightness.left::before {
+    background: linear-gradient(to right, var(--grey) 1%, rgba(245, 245, 245, .2));
+}
+
+section.about.top-lightness.left::before {
+    background: linear-gradient(to right, var(--grey) 38%, rgba(245, 245, 245, .2));
+}
+
+section.top-lightness .container, section.route-geographics .container {
     position: relative;
     z-index: 3;
+}
+
+.color-green {
+    color: var(--dark_green);
+}
+
+.overlay::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(39, 37, 37, .5);
+}
+
+.overlay.dark::before {
+    background: rgba(39, 37, 37, .6);
+}
+
+.overlay .container-fluid, .overlay .container {
+    position: relative;
+    z-index: 2;
+}
+
+body .overlay.dark h2 {
+    color: var(--white);
 }
 
 .post p:not(:last-of-type), .post ul, .post ol {
@@ -235,6 +323,10 @@ section.lightness::before {
     padding-left: 20px;
 }
 
+.post ol li {
+    list-style-type: inherit;
+}
+
 .post ul li {
     padding-left: 0;
     margin-bottom: 4px;
@@ -245,9 +337,9 @@ section.lightness::before {
     margin-bottom: 0;
 }
 
-body h2 {
-    position: relative;
-    z-index: 2;
+body .single-wrap__content.post p, body .single-wrap__content.post li {
+    font-size: 20px;
+    line-height: 148%;
 }
 
 body h1 {
@@ -260,6 +352,13 @@ body h1 {
 
 }
 
+body h1.contacts__title {
+    color: var(--black);
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
 body h2 {
     margin-bottom: 80px;
     color: var(--black);
@@ -267,6 +366,12 @@ body h2 {
     font-family: var(--gotham_medium);
     font-size: 50px;
     position: relative;
+    z-index: 2;
+    font-weight: 500;
+}
+
+.single-route-wrap__text body h2 {
+    margin-bottom: 33px;
 }
 
 body h2.centered-title {
@@ -291,6 +396,19 @@ body h2.big-title {
 
 body h2.big-title::before {
     display: none;
+}
+
+body h2.big-title.route-geo-left__title {
+    font-size: 90px;
+    margin-bottom: 40px;
+}
+
+body h2.big-title.menu__title {
+    margin-bottom: 88px;
+}
+
+body h2.menu-category__title {
+    margin-bottom: 43px;
 }
 
 body h3 {
@@ -324,6 +442,10 @@ body h3.route-item__title {
     margin-bottom: 8px;
 }
 
+body h3.route-item__title_actions {
+    margin-bottom: 30px;
+}
+
 body h2::before {
     content: "";
     display: block;
@@ -344,6 +466,12 @@ body h2.centered-title::before {
     top: -45%;
     left: 50%;
     transform: translateX(-50%);
+}
+
+body h4 {
+    font-family: var(--gotham_medium);
+    font-size: 22px;
+    line-height: 130%;
 }
 
 body p {
@@ -395,6 +523,10 @@ body p {
     margin-right: auto;
 }
 
+.under-line {
+    border-bottom: 1px solid var(--grey);
+}
+
 
 /*Media*/
 
@@ -421,6 +553,18 @@ body p {
     body h2.centered-title.reviews__title {
         margin-bottom: 76px;
     }
+
+    body h2.big-title.route-geo-left__title {
+        font-size: 85px;
+    }
+
+    body h2.big-title.menu__title {
+        margin-bottom: 70px;
+    }
+
+    body .single-wrap__content.post p, body .single-wrap__content.post li {
+        font-size: 18px;
+    }
 }
 
 @media (max-width:1399px) {
@@ -435,6 +579,10 @@ body p {
 
     body h2.big-title {
         font-size: 90px;
+    }
+
+    body h2.big-title.route-geo-left__title {
+        font-size: 70px;
     }
 
     body h3 {
@@ -454,6 +602,15 @@ body p {
         padding-bottom: 100px;
     }
 
+    section.gallery {
+        padding-top: 76px;
+        padding-bottom: 80px;
+    }
+
+    .single section.routes {
+        padding-top: 100px;
+    }
+
     body h2.centered-title::before {
         width: 548px;
         height: 85px;
@@ -462,6 +619,23 @@ body p {
     .routes-bg__link {
         bottom: -2rem;
     }
+
+    section.single-services {
+        padding-bottom: 60px;
+    }
+
+    body h2.big-title.menu__title {
+        margin-bottom: 48px;
+    }
+
+    body .button.more-btn {
+        margin-top: 35px;
+    }
+
+    section.contacts {
+        padding-top: 150px;
+    }
+
 }
 
 @media (max-width:1199px) {
@@ -480,6 +654,19 @@ body p {
     section {
         padding-top: 90px;
         padding-bottom: 90px;
+    }
+
+    .single section.routes {
+        padding-top: 90px;
+    }
+
+    section.cta-2 {
+        padding-top: 70px;
+    }
+
+    section.gallery {
+        padding-top: 64px;
+        padding-bottom: 64px;
     }
 
     body .button {
@@ -510,12 +697,24 @@ body p {
     body h2.centered-title.reviews__title {
         margin-bottom: 54px;
     }
+
+    body h2.big-title.route-geo-left__title {
+        font-size: 60px;
+    }
+
+    section.contacts {
+        padding-top: 140px;
+    }
 }
 
 @media (max-width:991px) {
     section {
         padding-top: 90px;
         padding-bottom: 90px;
+    }
+
+    .single section.routes {
+        padding-top: 90px;
     }
 
     section.right-image, section.contains {
@@ -578,6 +777,10 @@ body p {
     .reviews-list.grid-four {
         grid-template-columns: repeat(2, 368px);
     }
+
+    body h3.route-item__title.route-item__title_actions {
+        font-size: 28px;
+    }
 }
 
 @media (max-width:930px) and (max-height:420px) {
@@ -586,8 +789,20 @@ body p {
         padding-bottom: 60px;
     }
 
+    section.single-services {
+        padding-top: 60px;
+    }
+
+    .single section.routes {
+        padding-top: 60px;
+    }
+
     .post p:not(:last-of-type), .post ul, .post ol {
         margin-bottom: 18px;
+    }
+
+    body .single-wrap__content.post p, body .single-wrap__content.post li {
+        font-size: 16px;
     }
 
     body h1 {
@@ -644,12 +859,43 @@ body p {
         margin-bottom: 26px;
     }
 
+    body h2.big-title.route-geo-left__title {
+        font-size: 38px;
+        margin-bottom: 30px;
+    }
+
+    section.about {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    section.gallery {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    body h2.big-title.menu__title {
+        margin-bottom: 42px;
+    }
+
+    section.contacts {
+        padding-top: 106px;
+        padding-bottom: 60px;
+    }
+
+    body h1.contacts__title {
+        margin-bottom: 50px;
+    }
 }
 
 @media (max-width:767px) {
     section {
         padding-top: 60px;
         padding-bottom: 60px;
+    }
+
+    .single section.routes {
+        padding-top: 60px;
     }
 
     body h1 {
@@ -714,14 +960,66 @@ body p {
         grid-template-columns: 1fr;
     }
 
+    .route-params.grid-two {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     body h2.centered-title.reviews__title {
         margin-bottom: 40px;
+    }
+
+    body h2.big-title.route-geo-left__title {
+        font-size: 38px;
+        margin-bottom: 30px;
+    }
+
+    section.about.top-lightness.left::before {
+        background: linear-gradient(to right, var(--grey) 38%, rgba(245, 245, 245, .8));
+    }
+
+    section.about {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    section.single-services {
+        padding-top: 60px;
+    }
+
+    section.gallery {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    body h2.big-title.menu__title {
+        margin-bottom: 42px;
+    }
+
+    body .single-wrap__content.post p, body .single-wrap__content.post li {
+        font-size: 16px;
+    }
+
+    body .archive-route__bottom_actions .button {
+        min-width: 276px;
+    }
+
+    section.contacts {
+        padding-top: 106px;
+        padding-bottom: 60px;
+    }
+
+    body h1.contacts__title {
+        margin-bottom: 50px;
     }
 }
 
 @media (max-width:767px) and (max-height:420px) {
     .reviews-list.grid-four {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    body h1 {
+        font-size: 27px;
     }
 }
 
@@ -747,5 +1045,30 @@ body p {
 
     body h2.centered-title.reviews__title {
         margin-bottom: 26px;
+    }
+
+    body h2.big-title.route-geo-left__title {
+        font-size: 32px;
+        margin-bottom: 26px;
+    }
+
+    section.gallery {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    body .button.more-btn {
+        margin-top: 24px;
+        min-width: fit-content;
+        width: 100%;
+    }
+
+    body h3.route-item__title.route-item__title_actions {
+        font-size: 26px;
+    }
+
+    body .archive-route__bottom_actions .button, body .archive-route__bottom_actions .action-block__bottom {
+        min-width: fit-content;
+        width: 100%;
     }
 }

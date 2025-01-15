@@ -67,6 +67,14 @@ form .input-form.textarea {
     margin-bottom: 10px;
 }
 
+.inputs-radio-wrap .quiz_captcha {
+    margin-bottom: 0;
+}
+
+.inputs-radio-wrap .quiz_captcha>p {
+    margin-bottom: 0;
+}
+
 .agree-wrap {
     grid-template-columns: 1fr auto;
     gap: 16px;
@@ -98,6 +106,10 @@ span.wpcf7-list-item input[type="checkbox"] {
     margin-bottom: 10px;
 }
 
+.cta-form__form2.cta-form .agree+span.wpcf7-list-item-label {
+    max-width: 100%;
+}
+
 .agree+span.wpcf7-list-item-label a {
     color: var(--dark_green);
     text-decoration: underline;
@@ -110,6 +122,11 @@ span.wpcf7-list-item input[type="checkbox"] {
 
 form .wpcf7-form-control-wrap {
     position: static;
+}
+
+.cta-form__form2 form .wpcf7-form-control-wrap {
+    margin-bottom: 14px;
+    display: block;
 }
 
 .wpcf7 form .wpcf7-not-valid-tip {
@@ -143,6 +160,14 @@ body .input-radio input[type="radio"] {
 body .input-radio input[type="radio"]+span.wpcf7-list-item-label {
     font-family: var(--gotham_regular);
     font-size: 14px;
+}
+
+.inputs-wrap {
+    gap: 14px;
+}
+
+.inputs-radio-wrap {
+    gap: 60px;
 }
 
 
@@ -192,7 +217,38 @@ body .input-radio input[type="radio"]+span.wpcf7-list-item-label {
     form input.button {
         min-height: 34px;
     }
+
     body form .wpcf7-spinner {
         position: absolute;
+    }
+
+    .inputs-radio-wrap {
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .cta-form__form2 form .wpcf7-form-control-wrap {
+        margin-bottom: 0;
+    }
+
+    .cta-form__form2 form input.input-form {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width:767px) {
+    .inputs-radio-wrap {
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .cta-form__form2 form .wpcf7-form-control-wrap {
+        margin-bottom: 0;
+    }
+
+    .cta-form__form2 form input.input-form {
+        margin-bottom: 0;
     }
 }

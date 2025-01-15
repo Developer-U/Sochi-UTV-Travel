@@ -10,9 +10,11 @@ if (!defined('ABSPATH')) {
 
 /*ACF fields*/
 $page_id = get_the_ID();
-$meals_background_image = get_field('meals_background_image', $page_id);
-$meals_title = get_field('meals_title', $page_id);
-$meals_text = get_field('meals_text', $page_id);
+$fields_prefix = is_archive() ? 'options' : $page_id;
+$fields_index = is_archive() ? '_' . $page_id : '';
+$meals_background_image = get_field('meals_background_image', 'options');
+$meals_title = get_field('meals_title'. $fields_index, $fields_prefix);
+$meals_text = get_field('meals_text', 'options');
 
 if ($meals_title) { ?>
     <section class="meals" <?php
@@ -21,12 +23,17 @@ if ($meals_title) { ?>
 
         <div class="container">
             <?php
-            if ($meals_title) {
-                echo '<h2 class="meals__title position-relative">' . $meals_title . '</h2>';
-            }
+            if ($meals_title) { ?>
+                <h2 data-aos="fade-left" data-aos-offset="100" data-aos-delay="50"
+                data-aos-duration="900" data-aos-easing="linear" data-aos-once="true"
+                class="meals__title position-relative"><?php echo $meals_title; ?></h2>
+            <?php }
             ?>
             <div class="meals__wrap meals-wrap position-relative">
-                <div class="meals-wrap__text">
+                <div data-aos="fade-up" data-aos-offset="100"
+                    data-aos-delay="100" data-aos-duration="1000" data-aos-easing="linear" data-aos-once="false"
+                    data-aos-anchor-placement="top"
+                    class="meals-wrap__text">
                     <?php echo $meals_text; ?>
                 </div>
 

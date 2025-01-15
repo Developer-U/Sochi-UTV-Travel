@@ -9,11 +9,11 @@ if (!defined('ABSPATH')) {
 }
 
 $page_id = get_the_ID();
-$cta_title = get_field('cta_title', $page_id);
-$cta_background_image = get_field('cta_background_image', $page_id);
-$cta_right_side_image = get_field('cta_right_side_image', $page_id);
-$cta_form_title = get_field('cta_form_title', $page_id);
-$cta_form_subtitle = get_field('cta_form_subtitle', $page_id);
+$cta_title = get_field('cta_title', 'options');
+$cta_background_image = get_field('cta_background_image', 'options');
+$cta_right_side_image = get_field('cta_right_side_image', 'options');
+$cta_form_title = get_field('cta_form_title', 'options');
+$cta_form_subtitle = get_field('cta_form_subtitle', 'options');
 
 if ($cta_title) {
     ?>
@@ -33,12 +33,12 @@ if ($cta_title) {
                     if ($cta_title) {
                         echo '<h2 class="cta__title">' . $cta_title . '</h2>';
                     }
-                    if (have_rows('new_cta_item', $page_id)) { ?>
+                    if (have_rows('new_cta_item', 'options')) { ?>
                         <ul class="cta-wrap__list cta-wrap-list">
-                            <?php if (have_rows('new_cta_item', $page_id)) { ?>
-                                <?php while (have_rows('new_cta_item', $page_id)) {
+                            <?php if (have_rows('new_cta_item', 'options')) { ?>
+                                <?php while (have_rows('new_cta_item', 'options')) {
                                     the_row();
-                                    $cta_item = get_sub_field('cta_item', $page_id);
+                                    $cta_item = get_sub_field('cta_item', 'options');
                                     ?>
 
                                     <li class="cta-wrap-list__item cta-wrap-list-item position-relative">

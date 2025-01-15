@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
 }
 /*ACF fields*/
 $page_id = get_the_ID();
-$media_title = get_field('media_title', $page_id);
+$media_title = is_archive() ? 'Наши фото и видео' : get_field('media_title', $page_id);
 
 if (have_rows('new_photo_gallery_image', 'options') || have_rows('new_video_item', 'options')) {
     ?>
@@ -48,7 +48,8 @@ if (have_rows('new_photo_gallery_image', 'options') || have_rows('new_video_item
                 <div class="swiper-button-prev slider-arrow-prev"></div>
             </div>
 
-            <div class="media__video media-video-box d-flex align-items-start justify-content-start justify-content-md-between justify-content-lg-end">
+            <div
+                class="media__video media-video-box d-flex align-items-start justify-content-start justify-content-md-between justify-content-lg-end">
                 <div class="kaska-decor position-relative col d-none d-md-block">
                     <span class="kaska-decor__img position-absolute"></span>
                 </div>

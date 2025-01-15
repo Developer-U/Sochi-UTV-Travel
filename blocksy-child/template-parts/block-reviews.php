@@ -26,7 +26,7 @@ $query_reviews = new WP_Query($arg_reviews);
 if ($query_reviews->have_posts()) {
     ?>
 
-    <section class="reviews lightness" <?php
+    <section class="<?php if(is_archive('reviews')) { ?>archive-reviews<?php } else {?>reviews<?php }?> lightness" <?php
     if ($reviews_background_image) { ?>
             style="background-image: url('<?php echo $reviews_background_image['url']; ?>)" <?php } ?>>
         <div class="container">

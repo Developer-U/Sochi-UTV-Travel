@@ -1,0 +1,74 @@
+.menu-item-50 {
+    position: relative;
+}
+
+/* Скроем пункт меню "Наши услуги" в футере */
+.footer-medium__item #primary-menu li.menu-item-50 {
+    display: none;
+}
+
+.other-pages-menu #primary-menu .sub-menu li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.other-pages-menu #primary-menu .sub-menu li:hover, .other-pages-menu #primary-menu .sub-menu li:focus {
+    background-color: var(--black);
+}
+
+.navbar-content #primary-menu li.menu-item-50:hover, .navbar-content #primary-menu li.menu-item-50:focus {
+    background: transparent;
+}
+
+.navbar-content #primary-menu li.menu-item-50:hover a, .navbar-content #primary-menu li.menu-item-50:focus a,
+.navbar-content #primary-menu li.menu-item-50:hover .sub-menu li a, .navbar-content #primary-menu li.menu-item-50:focus .sub-menu li a {
+    color: var(--black);
+}
+
+.navbar-content #primary-menu li.menu-item-50:hover .sub-menu li, .navbar-content #primary-menu li.menu-item-50:focus .sub-menu li {
+    background-color: transparent;
+}
+
+.navbar-content #primary-menu li.menu-item-50 .sub-menu li:hover, .navbar-content #primary-menu li.menu-item-50 .sub-menu li:focus {
+    background-color: var(--black);
+}
+.navbar-content #primary-menu li.menu-item-50 .sub-menu li:hover a, .navbar-content #primary-menu li.menu-item-50 .sub-menu li:focus a {
+    color: var(--white);
+}
+
+#primary-menu .sub-menu li a {
+    height: fit-content;
+    font-size: 14px;
+    color: var(--white);
+}
+
+.menu-item-50>.sub-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 84px;
+    width: fit-content;
+}
+
+.menu-item-50>ul.sub-menu.active {
+    display: block;
+}
+
+.other-pages-menu .menu-item-50>.sub-menu li {
+    position: relative;
+    width: fit-content;
+    min-width: 262px;
+    background-color: #7F7D7D;
+    border-bottom: 1px solid var(--grey);
+    transition: background-color .3s ease-in-out;
+}
+
+@media (max-width:1199px) {
+    .menu-item-50>.sub-menu {
+        position: static;
+    }
+
+    .menu-item-50>.sub-menu li a {
+        font-size: 22px;
+    }
+}
