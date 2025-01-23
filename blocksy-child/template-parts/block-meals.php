@@ -37,7 +37,7 @@ if ($meals_title) { ?>
                     <?php echo $meals_text; ?>
                 </div>
 
-                <a href="#" class="button meals-wrap__button">Смотреть наше меню</a>
+                <a href="/services/goryachee-pitanie/" class="button meals-wrap__button">Смотреть наше меню</a>
             </div>
         </div>
     </section>

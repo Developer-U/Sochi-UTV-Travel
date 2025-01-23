@@ -92,7 +92,7 @@ if ($query_reviews->have_posts()) {
             </ul>
 
             <?php if (!is_archive('reviews')) {
-                echo '<a href="#" class="reviews__link button centered">смотреть все отзывы</a>';
+                echo '<a href="/reviews" class="reviews__link button centered">смотреть все отзывы</a>';
             } ?>
         </div>
     </section>

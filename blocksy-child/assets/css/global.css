@@ -348,13 +348,18 @@ body h1 {
     line-height: 96%;
     font-family: var(--gotham_bold);
     font-size: 60px;
-    text-align: right;
+}
 
+body h1.hero-box__title {
+    text-align: right;
+}
+
+body h1.page-title {
+    color: var(--black);
 }
 
 body h1.contacts__title {
     color: var(--black);
-    text-align: left;
     text-transform: uppercase;
     margin-bottom: 24px;
 }

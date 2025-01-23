@@ -6,11 +6,6 @@
     --header_color: rgba(0, 0, 0, .08);
 }
 
-.closed {
-    overflow-y: hidden;
-    height: 100vh;
-}
-
 .header {
     background-color: rgba(217, 217, 217, 0.7);
     border-bottom: 1px solid var(--black);
@@ -107,12 +102,12 @@
     height: 80px;
 }
 
-.other-pages-menu #primary-menu li:hover, .other-pages-menu #primary-menu li:focus {
+.other-pages-menu #primary-menu li:hover, .other-pages-menu #primary-menu li:focus, .other-pages-menu #primary-menu li.active {
     background-color: #7F7D7D;
     transition: background-color .3s ease-in-out;
 }
 
-.other-pages-menu #primary-menu li:hover a, .other-pages-menu #primary-menu li:focus a {
+.other-pages-menu #primary-menu li:hover a, .other-pages-menu #primary-menu li:focus a, .other-pages-menu #primary-menu li.active a {
     color: var(--white);
     transition: color .3s ease-in-out;
 }

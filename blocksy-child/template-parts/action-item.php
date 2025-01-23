@@ -6,7 +6,9 @@
 $action_preview_text = get_field('action_preview_text');
 ?>
 
-<li class="action-item position-relative js-item"
+<li class="action-item position-relative js-item js-action" data-aos="fade-left"
+    data-aos-delay="<?php echo 100 * ($index * 2.5); ?>" data-aos-duration="1000" data-aos-easing="ease-in-out"
+    data-aos-once="true" data-aos-anchor-placement="top"
     style="background-image: url('<?php echo wp_get_attachment_url(get_post_thumbnail_id()); ?>'); background-size: cover; background-repeat: no-repeat">
     <span class="action-item__gift position-absolute">
         <svg width="154" height="160" viewBox="0 0 154 160" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -70,7 +72,7 @@ $action_preview_text = get_field('action_preview_text');
     <div class="route-item__wrap position-relative archive-route d-grid">
         <div class="archive-route__top">
             <h3 class="route-item__title route-item__title_actions">
-                <?php the_title(); ?>
+                <?php the_title(); echo $index; ?>
             </h3>
 
             <?php if ($action_preview_text) {
@@ -78,16 +80,17 @@ $action_preview_text = get_field('action_preview_text');
             } ?>
         </div>
 
-        <div class="archive-route__bottom archive-route__bottom_actions d-flex gap-2 align-items-start js-item">
+        <div class="archive-route__bottom archive-route__bottom_actions d-flex gap-2 align-items-start">
             <div class="actions__btns col-auto">
-                <button type="button" class="button green js-item-open">Забронировать</button>
+                <button type="button" class="button green js-item-open"
+                    data-name-action="<?php the_title(); ?>">Забронировать</button>
 
                 <div class="route-item__form js-item-content">
-                    <?php echo do_shortcode('[contact-form-7 id="3e7efee" title="Быстрое бронирование по направлению"]'); ?>
+                    <?php echo do_shortcode('[contact-form-7 id="cebd4ea" title="Быстрое бронирование по акции"]'); ?>
                 </div>
             </div>
 
-            <a href="<?php the_permalink(); ?>" class="button gold col-auto">Узнать больше</a>
+            <a href="<?php the_permalink(); ?>" class="button action-more gold col-auto">Узнать больше</a>
         </div>
     </div>
 </li>

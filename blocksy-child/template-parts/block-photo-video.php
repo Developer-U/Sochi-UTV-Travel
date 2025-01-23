@@ -18,7 +18,8 @@ if (have_rows('new_photo_gallery_image', 'options') || have_rows('new_video_item
         <div class="container">
             <?php
             if ($media_title) {
-                echo '<h2 class="big-title media__title">' . $media_title . '</h2>';
+                echo '<h2 data-aos="fade-right" data-aos-offset="0" data-aos-delay="0" data-aos-duration="1300"
+                data-aos-easing="ease-in-out" data-aos-once="true" data-aos-anchor-placement="top-left" class="big-title media__title">' . $media_title . '</h2>';
             }
             ?>
 
@@ -87,7 +88,7 @@ if (have_rows('new_photo_gallery_image', 'options') || have_rows('new_video_item
                     <?php endif; ?>
                 </ul>
 
-                <a href="#" class="button media__button col-auto">Смотреть все фото и видео</a>
+                <a href="/gallery" class="button media__button col-auto">Смотреть все фото и видео</a>
             </div>
         </div>
     </section>

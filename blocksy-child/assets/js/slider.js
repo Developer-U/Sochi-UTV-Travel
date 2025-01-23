@@ -8,10 +8,10 @@ window.addEventListener('DOMContentLoaded', function(){
         //     enabled: true,
         //     pageUpDown: true,
         // },       
-        // autoplay: {
-        //     delay: 4000,            
-        //     waitForTransition: true,
-        // },  
+        autoplay: {
+            delay: 3000,            
+            waitForTransition: true,
+        },  
     });
 
     const photo_swiper = new Swiper(".photo-gallery-slider", {

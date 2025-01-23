@@ -12,15 +12,21 @@ if (!defined('ABSPATH')) {
 $page_id = get_the_ID();
 $fields_prefix = is_archive() ? 'options' : $page_id;
 $fields_index = is_archive() ? '_' . $page_id : '';
-$services_title = is_singular('services') ? 'Другие наши услуги' : get_field('services_title' . $fields_index, $fields_prefix);
-$block_about_image = get_field('block_about_image'. $fields_index, $fields_prefix);
+if (is_singular('services')) {
+    $services_title = 'Другие наши услуги';
+} elseif (is_archive()) {
+    $services_title = 'Наши услуги';
+} else {
+    get_field('services_title' . $fields_index, $fields_prefix);
+}
+$block_about_image = is_archive() ? get_stylesheet_directory_uri() . '/assets/img/about-bg.jpg' : get_field('block_about_image' . $fields_index, $fields_prefix);
 $arg_services = array(
     'orderby' => 'name',
     'order' => 'DESC',
     'posts_per_page' => 50,
     'post_type' => 'services',
     'post_status' => 'publish',
-    'post__not_in' => array( $id ), // Исключим текущий пост
+    'post__not_in' => array($id), // Исключим текущий пост
 );
 
 $query_services = new WP_Query($arg_services);
@@ -28,7 +34,9 @@ $query_services = new WP_Query($arg_services);
 if ($query_services->have_posts()) {
     ?>
 
-    <section id="services" class="services <?php if (is_page('about') || is_page('gallery') || is_archive('actions')) { ?>overlay dark position-relative<?php } ?>" <?php if ($block_about_image) { ?> style="background-image: url('<?php echo $block_about_image['url']; ?>')" <?php } ?>>
+    <section id="services"
+        class="services <?php if (is_page('about') || is_page('gallery') || is_archive('actions')) { ?>overlay dark position-relative<?php } ?>"
+        <?php if ($block_about_image) { ?> style="background-image: url('<?php echo is_archive() ? $block_about_image : $block_about_image['url']; ?>')" <?php } ?>>
         <div class="container">
             <?php
             if ($services_title) { ?>
@@ -82,8 +90,10 @@ if ($query_services->have_posts()) {
                 <?php } ?>
             </ul>
 
-            <?php if (is_page('about') || is_page('gallery') ) {
+            <?php if (is_page('about') || is_page('gallery')) {
+                echo 'div class="mt-2 mt-lg-3 mt-xl-4">';
                 get_template_part('template-parts/booking', 'button');
+                echo '</div>';
             } ?>
         </div>
     </section>

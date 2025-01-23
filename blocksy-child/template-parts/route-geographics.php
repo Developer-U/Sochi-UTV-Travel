@@ -56,7 +56,6 @@ if (have_rows('new_route_point')) {
                         if ($geo_green_bar_text) {
                             echo '<div data-depth="0.5" class="scene green-bar-text route-geo"><div>' . $geo_green_bar_text . '</div></div>';
                         }
-                        get_template_part('template-parts/booking', 'button');
                         ?>
                     <? } ?>
                 </div>

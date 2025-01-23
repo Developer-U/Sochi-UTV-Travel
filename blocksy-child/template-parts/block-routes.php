@@ -23,7 +23,7 @@ $arg_routes = array(
     'posts_per_page' => $routes_count,
     'post_type' => 'routes',
     'post_status' => 'publish',
-    'post__not_in' => array($id), // Исключим текущий пост
+    'post__not_in' => is_singular('routes') ? array($id) : false, // Исключим текущий пост
 );
 
 $query_routes = new WP_Query($arg_routes);
@@ -82,7 +82,7 @@ if ($query_routes->have_posts()) {
                 }
                 ?>
             </div>
-            <a href="#" class="routes-bg__link button attention">смотреть все туры</a>
+            <a href="/routes" class="routes-bg__link button attention">смотреть все туры</a>
         <?php } ?>
     </section>
 <?php } ?>

@@ -34,12 +34,14 @@ if ($query_actions->have_posts()) {
     <section class="actions">
         <div class="container">
             <div class="actions__wrap actions-wrap d-grid align-items-start">
-                <article class="route-item route-item__action position-relative js-item"
+                <article class="route-item route-item__action position-relative"
                     style="background-image: url('<?php echo wp_get_attachment_url(get_post_thumbnail_id()); ?>'); background-size: cover; background-repeat: no-repeat">
                     <div class="route-item__wrap position-relative archive-route d-grid">
                         <?php
                         if ($action_digits) { ?>
-                            <span class="actions-wrap__digits text-danger">
+                            <span class="actions-wrap__digits text-danger"
+                            data-aos="fade-left" data-aos-offset="0" data-aos-delay="100" data-aos-duration="800"
+                                    data-aos-easing="ease-in" data-aos-once="true" data-aos-anchor-placement="top">
                                 <?php echo $action_digits; ?>
                             </span>
                         <?php } ?>
@@ -51,13 +53,15 @@ if ($query_actions->have_posts()) {
                         if ($actions_one_action_image) { ?>
                             <div class="actions-wrap__image position-relative">
                                 <div class="top-block-right__image top-block-right__image_first-action position-absolute"
-                                    style="background-image: url('<?php echo $actions_one_action_image['url']; ?>)"></div>
+                                    style="background-image: url('<?php echo $actions_one_action_image['url']; ?>)"
+                                    data-aos="fade-right" data-aos-offset="50" data-aos-delay="0" data-aos-duration="800"
+                                    data-aos-easing="ease-in" data-aos-once="false" data-aos-anchor-placement="top-center"></div>
                             </div>
                         <?php } ?>
                     </div>
                 </article>
 
-                <div class="action-wrap__text action-block">
+                <div class="action-wrap__text action-block js-action">
                     <?php
                     if ($actions_one_action_text) {
                         echo '<div class="action-block__text">' . $actions_one_action_text . '</div>';
@@ -67,10 +71,11 @@ if ($query_actions->have_posts()) {
                         <a href="<?php the_permalink(); ?>" class="button gold col-auto">Узнать больше</a>
 
                         <div class="action-block__bottom col-auto">
-                            <button type="button" class="button green js-item-open">Забронировать</button>
+                            <button type="button" class="button green js-item-open"
+                                data-name-action="<?php the_title(); ?>">Забронировать</button>
 
                             <div class="route-item__form js-item-content">
-                                <?php echo do_shortcode('[contact-form-7 id="3e7efee" title="Быстрое бронирование по направлению"]'); ?>
+                                <?php echo do_shortcode('[contact-form-7 id="cebd4ea" title="Быстрое бронирование по акции"]'); ?>
                             </div>
                         </div>
                     </div>
@@ -79,7 +84,7 @@ if ($query_actions->have_posts()) {
         </div>
     </section>
 
-<?php } 
+<?php }
 
 get_template_part('template-parts/block', 'actions');
 

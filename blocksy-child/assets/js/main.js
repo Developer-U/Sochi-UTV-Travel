@@ -97,7 +97,16 @@ window.addEventListener('DOMContentLoaded', function(){
     /* Init AOS Animation */
     AOS.init();
 
+    jQuery(document).ready(function ($) {
+        let sections = $('.js-action'); // Все секции услуг
+        sections.each(function () { // Итерируем и далее код в цикле            
+            let button = $(this).find('.js-item-open'); // добираемся до кнопки   
+            let action_title = button.attr('data-name-action');              
+            $(this).find('.action-hide-title').val(action_title); 
+            // console.log(route_title); 
+        });
 
+    });
 
     
     // /* Get Digit Count */

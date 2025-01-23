@@ -135,6 +135,13 @@
     bottom: -115px;
     right: 33vw;
 }
+.top-block-right__image_actions>div {
+    width:100%;
+    height:100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 /*Top block end*/
 

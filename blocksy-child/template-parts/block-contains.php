@@ -60,7 +60,12 @@ if ($contains_title) { ?>
                     </ul>
                 <?php }
 
-                get_template_part('template-parts/booking', 'button'); ?>
+                if(!is_single()) {
+                    get_template_part('template-parts/booking', 'button'); 
+                } else {
+                    echo '<a class="button route-sidebar__button" href="#cta_2_' .$page_id. '">забронировать тур</a>';
+                }
+                ?>
 
             </div>
         </div>

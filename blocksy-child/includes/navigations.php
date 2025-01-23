@@ -29,3 +29,12 @@ function estore_left_sidebar_menu() {
         'menu_id'         => 'primary-menu'   
     ] );
 }
+
+// Делаем активным пункт меню на текущей странице
+add_filter('nav_menu_css_class' , 'custom_nav_class' , 10 , 2);
+function custom_nav_class ($classes, $item) {
+    if (in_array('current-menu-item', $classes) ){
+        $classes[] = 'active ';
+    }
+    return $classes;
+}

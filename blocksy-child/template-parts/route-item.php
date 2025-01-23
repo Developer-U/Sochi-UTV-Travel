@@ -70,7 +70,7 @@ if (is_archive('routes')) {
             let button = $(this).find('.js-item-open'); // добираемся до кнопки   
             let route_title = button.attr('data-name-route');  
             $(this).find('.hide-title').val(route_title); 
-            console.log(route_title); 
+            // console.log(route_title); 
         });
 
     });

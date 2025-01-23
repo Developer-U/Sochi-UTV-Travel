@@ -56,7 +56,7 @@ if (have_rows('new_technics', 'options')) {
                                 echo '<div class="technics-item__text position-relative">' . $one_technics_text . '</div>';
                             }
                             ?>
-                            <a href="#" class="button technics-item__button">Погнали!</a>
+                            <button class="button technics-item__button" data-popup-open="zakaz-popup">Погнали!</button>
                         </li>
                     <?php }
                 } ?>

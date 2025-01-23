@@ -1,19 +1,32 @@
 jQuery(function($) {
-    const text_wraps = $('.js-item');   
+    const text_wraps = $('.js-item');    
+    
+
     text_wraps.each(function() {
         let btn_open = $(this).find('.js-item-open');
         let btn_close = $(this).find('.js-item-close');
         let item_content = $(this).find('.js-item-content');
 
+        let action_more = $(this).find('.action-more');
+
         btn_open.on('click', function(event){
+            
             item_content.slideToggle('slow');
 
             if(btn_open.text() == 'Забронировать') {
                 btn_open.text('скрыть');
                 btn_open.addClass('opened');
+                if(action_more !== null) {
+                    action_more.css('display', 'none');
+                }
             } else {
                 btn_open.text('Забронировать');
                 btn_open.removeClass('opened');
+                if(action_more !== null) {
+                    setTimeout(function(){
+                        action_more.css('display', '');
+                    }, 800);                    
+                }
             }
             
         })
