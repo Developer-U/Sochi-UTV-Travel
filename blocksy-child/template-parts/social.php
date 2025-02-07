@@ -5,21 +5,20 @@
  */
 $socials =  get_field('social_icons', 'options');
 
-if( $socials['whatsapp'] || $socials['telegram'] || $socials['vk']) { 
 ?>
     <!-- Social icons block -->
     <ul class="header-bottom__social social col-auto">
         <?php
         if( $socials['whatsapp'] ) { ?>
             <li class="social__item">
-                <a href="https://api.whatsapp.com/send?phone=<?php echo $socials['whatsapp']; ?>" target="_blank" class="social__link whatsapp">									
+                <a href="https://api.whatsapp.com/send?phone=7<?php echo $socials['whatsapp']; ?>" target="_blank" class="social__link whatsapp">									
                 </a>
             </li>
         <?php };						
 
         if( $socials['telegram'] ) { ?>
             <li class="social__item">
-                <a href="https://t.me/+7<?php echo $socials['telegram']; ?>" target="_blank" class="social__link telegram">								
+                <a href="<?php echo $socials['telegram']; ?>" target="_blank" class="social__link telegram">								
                 </a>
             </li>
         <?php };
@@ -29,7 +28,21 @@ if( $socials['whatsapp'] || $socials['telegram'] || $socials['vk']) {
                 <a href="<?php echo $socials['vk']; ?>" class="social__link vk" target="_blank">							
                 </a>
             </li>
-        <?php } ?>
+        <?php } 
+        
+        if( $socials['youtube']) { ?>
+            <li class="social__item">
+                <a href="<?php echo $socials['youtube']; ?>" class="social__link youtube" target="_blank">							
+                </a>
+            </li>
+        <?php }
+        
+        if( $socials['rutube']) { ?>
+            <li class="social__item">
+                <a href="<?php echo $socials['rutube']; ?>" class="social__link rutube" target="_blank">							
+                </a>
+            </li>
+        <?php }
+        ?>
     </ul>
     <!-- Social icons block end-->
-<?php } ?>

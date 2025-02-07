@@ -9,6 +9,7 @@ if (!defined('ABSPATH')) {
 }
 
 /*ACF fields*/
+$page_id = get_the_ID();
 $geo_route_title = get_field('geo_route_title', 'options');
 $geo_gold_bar_text = get_field('geo_gold_bar_text', 'options');
 $geo_green_bar_text = get_field('geo_green_bar_text', 'options');
@@ -16,7 +17,7 @@ $geo_green_bar_text = get_field('geo_green_bar_text', 'options');
 if (have_rows('new_route_point')) {
     ?>
 
-    <section class="route-geographics position-relative"
+    <section id="geo_<?php echo $page_id; ?>" class="route-geographics position-relative"
         style="background-image: url('<?php echo wp_get_attachment_url(get_post_thumbnail_id()); ?>'); background-size: cover; background-repeat: no-repeat">
 
         <div class="container">

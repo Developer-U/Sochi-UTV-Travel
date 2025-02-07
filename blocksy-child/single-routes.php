@@ -42,7 +42,10 @@ get_template_part('template-parts/top', 'block');
         <div class="single-route-wrap__text post">
             <h2>Описание маршрута</h2>
 
-            <?php the_content(); ?>
+            <?php the_content();
+
+            get_template_part('template-parts/equipment', 'block');
+            ?>
         </div>
 
         <div class="single-routes__sidebar route-sidebar d-grid">

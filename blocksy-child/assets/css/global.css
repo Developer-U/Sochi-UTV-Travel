@@ -300,6 +300,21 @@ body .overlay.dark h2 {
     color: var(--white);
 }
 
+.post blockquote {
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 2px solid var(--green);
+    border-radius: 16px;
+}
+
+.post blockquote p {
+    color: var(--dark_green);
+}
+
+.post blockquote p:last-of-type {
+    margin-bottom: 0;
+}
+
 .post p:not(:last-of-type), .post ul, .post ol {
     margin-bottom: 30px;
 }
@@ -329,9 +344,23 @@ section.lightness::before {
 
 .post ul li {
     padding-left: 0;
-    margin-bottom: 4px;
+    margin-bottom: 10px;
     list-style-type: disc;
 }
+
+.post ul.equipment-list {
+    padding-left: 0;
+}
+
+.post ul.equipment-list li {
+    padding-left: 0;
+    list-style-type: inherit;
+}
+
+body .wp-block-gallery.has-nested-images figure.wp-block-image {
+    height: 256px;
+}
+
 
 .post .share p {
     margin-bottom: 0;
@@ -710,6 +739,10 @@ body p {
     section.contacts {
         padding-top: 140px;
     }
+
+    body .wp-block-gallery.has-nested-images figure.wp-block-image {
+        height: 17vw;
+    }
 }
 
 @media (max-width:991px) {
@@ -785,6 +818,10 @@ body p {
 
     body h3.route-item__title.route-item__title_actions {
         font-size: 28px;
+    }
+
+    body .wp-block-gallery.has-nested-images figure.wp-block-image {
+        height: 24vw;
     }
 }
 

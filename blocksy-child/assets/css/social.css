@@ -1,7 +1,7 @@
 /*Social icons*/
 .social {
     display: grid;
-    grid-template-columns: repeat(3, 35px);
+    grid-template-columns: repeat(4, 35px);
     gap: 10px;
     align-items: center;
 }
@@ -75,6 +75,42 @@
     transition: all .25s ease-in-out;
 }
 
+.social__link.youtube {
+    background-image: url('../img/youtube.svg');
+    -webkit-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+
+.hero-box__buttons .social__link.youtube, .footer .social__link.youtube, .top-block .social__link.youtube {
+    background-image: url('../img/youtube_white.svg');
+}
+
+.social__link.youtube:hover, .social__link.youtube:focus, .social__link.youtube:active {
+    background-image: url('../img/youtube_hover.svg');
+    -webkit-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+
+.social__link.rutube {
+    background-image: url('../img/rutube.svg');
+    -webkit-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+
+.hero-box__buttons .social__link.rutube, .footer .social__link.rutube, .top-block .social__link.rutube {
+    background-image: url('../img/rutube_white.svg');
+}
+
+.social__link.rutube:hover, .social__link.rutube:focus, .social__link.rutube:active {
+    background-image: url('../img/rutube_hover.svg');
+    -webkit-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+
 .social-buttons-block {
     gap: 60px;
 }
@@ -94,7 +130,7 @@
 
 @media (max-width:767px) {
     .social {
-        grid-template-columns: repeat(3, 30px);
+        grid-template-columns: repeat(4, 30px);
     }
 
     .social__item {
