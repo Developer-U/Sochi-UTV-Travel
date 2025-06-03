@@ -124,6 +124,10 @@ body li {
     background: linear-gradient(to bottom, var(--white), var(--grey));
 }
 
+.grey {
+    background-color: var(--grey);
+}
+
 body .button {
     font-family: var(--gotham_medium);
     color: var(--white);
@@ -404,7 +408,7 @@ body h2 {
     font-weight: 500;
 }
 
-.single-route-wrap__text body h2 {
+.single-route-wrap__text body h2, body h2.single-gallery__title {
     margin-bottom: 33px;
 }
 

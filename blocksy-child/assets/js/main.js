@@ -9,10 +9,10 @@ window.addEventListener('DOMContentLoaded', function(){
 
     var selectors = document.querySelectorAll('input[type="tel"].input-form');
 
-    selectors.forEach(function(selector){
-    var im = new Inputmask("+7(999)-999-9999");
-    im.mask(selector);
-    });
+    // selectors.forEach(function(selector){
+    // var im = new Inputmask("+7(999)-999-9999");
+    // im.mask(selector);
+    // });
 
     /*Load more button*/
     const Wrappers = document.querySelectorAll('.js-targetTabs'); // Родитель постов   

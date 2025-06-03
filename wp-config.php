@@ -20,16 +20,18 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'u0618804_utv' );
+define('WP_CACHE', true);
+define( 'WPCACHEHOME', '/home/u/utv223/sochi-utv-travel.ru/public_html/wp-content/plugins/wp-super-cache/' );
+define( 'DB_NAME', "utv223_sochiutv" );
 
 /** Database username */
-define( 'DB_USER', 'u0618_utv' );
+define( 'DB_USER', "utv223_sochiutv" );
 
 /** Database password */
-define( 'DB_PASSWORD', '$W3i54o0x' );
+define( 'DB_PASSWORD', "\$W3i54o0x" );
 
 /** Database hostname */
-define( 'DB_HOST', 'localhost:3306' );
+define( 'DB_HOST', "localhost" );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
@@ -85,7 +87,9 @@ $table_prefix = 'wp_';
  *
  * @link https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/
  */
-define( 'WP_DEBUG', false );
+define( 'WP_DEBUG', true );
+define( 'WP_DEBUG_LOG', false );
+define( 'WP_DEBUG_DISPLAY', false );
 
 /* Add any custom values between this line and the "stop editing" line. */
 
@@ -95,7 +99,7 @@ define( 'WP_DEBUG', false );
 
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', __DIR__ . '/' );
+	define( 'ABSPATH', dirname(__FILE__) . '/' );
 }
 
 /** Sets up WordPress vars and included files. */

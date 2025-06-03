@@ -16,6 +16,8 @@ get_template_part('template-parts/block', 'services');
 
 get_template_part('template-parts/block', 'routes');
 
+get_template_part('template-parts/block', 'first-action');
+
 get_template_part('template-parts/advantages');
 
 get_template_part('template-parts/block', 'meals');

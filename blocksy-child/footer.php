@@ -68,7 +68,7 @@ do_action('blocksy:footer:before');
                             <p class="footer-contacts__text">
                                 Пишите WhatsApp
                             </p>
-                            <a href="https://api.whatsapp.com/send?phone=<?php echo $socials['whatsapp']; ?>"
+                            <a href="https://api.whatsapp.com/send?phone=7<?php echo $socials['whatsapp']; ?>"
                                 target="_blank" class="footer-contacts__link tel">
                                 <?php echo $socials['whatsapp']; ?>
                             </a>
