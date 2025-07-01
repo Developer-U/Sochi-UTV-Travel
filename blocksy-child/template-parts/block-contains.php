@@ -21,6 +21,7 @@ if ($contains_title) { ?>
     <section class="contains position-relative" <?php
     if ($contains_background_image) { ?>
             style="background-image: url('<?php echo $contains_background_image['url']; ?>)" <?php } ?>>
+        <div class="gradient-right position-absolute"></div>
 
         <div class="container">
             <?php

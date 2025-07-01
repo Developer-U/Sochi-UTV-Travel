@@ -10,6 +10,8 @@ get_header();
 
 get_template_part('template-parts/hero');
 
+get_template_part('template-parts/block', 'left-image');
+
 get_template_part('template-parts/block', 'right-image');
 
 get_template_part('template-parts/block', 'services');

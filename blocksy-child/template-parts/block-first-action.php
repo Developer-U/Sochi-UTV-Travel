@@ -25,7 +25,7 @@ if ($query_actions->have_posts()) {
     ?>
     <section class="actions">
         <div class="container">
-            <div class="actions__wrap actions-wrap d-grid align-items-start">
+            <div class="actions__wrap actions-wrap d-grid">
                 <article class="route-item route-item__action position-relative"
                     style="background-image: url('<?php echo wp_get_attachment_url(get_post_thumbnail_id()); ?>'); background-size: cover; background-repeat: no-repeat">
                     <div class="route-item__wrap position-relative archive-route d-grid">

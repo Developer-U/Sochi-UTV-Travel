@@ -160,6 +160,13 @@
     width: 45%;
 }
 
+.left-image__wrap.right-wrap {
+    left: 0;
+    right: auto;
+    top: auto;
+    bottom: 220px;
+}
+
 .contains__wrap.right-wrap {
     top: 0;
     width: 50%;
@@ -232,6 +239,19 @@
     width: 57%;
 }
 
+.left-image__texts.right-image-text-block {
+    margin-left: auto;
+    width: 51%;
+}
+
+.left-image__text p {
+    font-size: 18px;
+}
+
+.left-image__text p:not(:last-of-type) {
+    margin-bottom: 2rem;
+}
+
 .contains__texts.right-image-text-block {
     width: 53%;
 }
@@ -253,6 +273,10 @@
     width: 40px;
     height: 40px;
     background: url('../img/logo-sign-green.svg') no-repeat center/contain;
+}
+
+.left-image__list .right-image-item::before {
+    background-image: url('../img/logo-sign-red.svg');
 }
 
 /*Right image block end*/
@@ -347,11 +371,17 @@
 /*Routes*/
 
 .routes {
-    background-size: 100% 80%;
+    /* background-size: 100% 80%; */
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
     padding-top: 0;
     min-height: 100vh;
+}
+
+.routes-box__text p {
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .single .routes {
@@ -410,6 +440,14 @@
     padding-bottom: 0;
 }
 
+.route-item.item-2 {
+    right: -11.3vw;
+}
+
+.route-item.item2-2 {
+    right: -2vw;
+}
+
 .route-item::after, .action-item::after {
     content: "";
     display: block;
@@ -419,21 +457,6 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom, var(--white) 30%, transparent);
-}
-
-.route-item:nth-of-type(1) {
-    left: -12vw;
-    top: 1.5vw;
-}
-
-.route-item:nth-of-type(4) {
-    right: -5vw;
-}
-
-.route-item__action:nth-of-type(1), .route-item__action:nth-of-type(4) {
-    left: auto;
-    right: auto;
-    top: auto;
 }
 
 .archive-route {
@@ -448,7 +471,7 @@
     flex-wrap: wrap;
 }
 
-.archive-routes-list .route-item {
+.route-item {
     width: 350px;
 }
 
@@ -1579,6 +1602,96 @@ a.contacts-texts__link {
 
 /*Single end*/
 
+/*Routes-date*/
+
+.route-date {
+    padding-top: 100px;
+    padding-bottom: 40px;
+}
+
+.route-date__text {
+    margin-bottom: 2rem;
+}
+
+.route-date__box {
+    margin-bottom: 1rem;
+}
+
+.date-box__date {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.next-dates-list__item {
+    margin-bottom: 1rem;
+}
+
+.date-box {
+    padding-left: 32px;
+    position: relative;
+}
+
+.date-box::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: url('../img/logo-sign-green.svg') no-repeat center / contain;
+}
+
+.go-to-box {
+    width: 100%;
+}
+
+.archive-routes__box:not(:last-of-type) {
+    margin-bottom: 5rem;
+}
+
+.routes-wrap {
+    gap: 28vw;
+}
+
+.routes-cat__item {
+    padding: 0 20px;
+    margin-bottom: 0;
+}
+
+.routes-cat__item:first-of-type {
+    padding-left: 0;
+}
+
+.routes-cat__item:not(:last-of-type) {
+    border-right: 1px solid var(--black);
+}
+
+.routes-cat__item a {
+    font-size: 22px;
+    color: var(--black);
+}
+
+.routes-cat {
+    flex-wrap: wrap;
+}
+
+.archive-routes__categories {
+    margin-bottom: 3rem;
+}
+
+.left-image__text {
+    max-width: 77%;
+    margin-bottom: 3rem;
+}
+
+.left-image-item__title p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/*Routes-date end*/
+
 /*Media*/
 
 @media (max-width:1808px) {
@@ -2037,6 +2150,22 @@ a.contacts-texts__link {
     .single-gallery__wrap:not(:last-of-type) {
         margin-bottom: 80px;
     }
+
+    .route-params.single {
+        padding: 115px 35px 40px;
+    }
+
+    .next-dates-list__item {
+        margin-bottom: 0.5rem;
+    }
+
+    .date-box__date {
+        font-size: 16px;
+    }
+
+    .buttons-block {
+        flex-wrap: wrap;
+    }
 }
 
 @media (max-width:1199px) {
@@ -2090,10 +2219,6 @@ a.contacts-texts__link {
         width: 950px;
         height: 255px;
         margin-top: -160px;
-    }
-
-    .route-item:nth-of-type(1) {
-        left: -7vw;
     }
 
     .advantages-list__item {
@@ -2330,10 +2455,6 @@ a.contacts-texts__link {
         column-gap: 80px;
     }
 
-    .route-item.route-item__action:nth-of-type(1) {
-        left: inherit;
-    }
-
     .top-block-right__image_first-action {
         width: 142%;
         height: 126%;
@@ -2357,6 +2478,35 @@ a.contacts-texts__link {
 
     .single-gallery__wrap:not(:last-of-type) {
         margin-bottom: 64px;
+    }
+
+    .route-date {
+        padding-top: 70px;
+        padding-bottom: 20px;
+    }
+
+    .routes-cat__item a {
+        font-size: 18px;
+    }
+
+    .archive-routes__categories {
+        margin-bottom: 2rem;
+    }
+
+    .routes-wrap {
+        gap: 24vw;
+    }
+
+    .left-image-item__title p {
+        font-size: 18px;
+    }
+
+    .left-image__texts.right-image-text-block {
+        width: 56%;
+    }
+
+    .routes-box__text p {
+        font-size: 18px;
     }
 }
 
@@ -2425,15 +2575,6 @@ a.contacts-texts__link {
     .routes {
         min-height: 96vh;
         background-size: cover;
-    }
-
-    .route-item:nth-of-type(1) {
-        left: 0;
-        top: 0;
-    }
-
-    .route-item:nth-of-type(4) {
-        right: 0;
     }
 
     .routes-list {
@@ -2562,7 +2703,7 @@ a.contacts-texts__link {
     }
 
     .route-sidebar {
-        max-width: 536px;
+        width: 100%;
     }
 
     .route-params {
@@ -2697,6 +2838,41 @@ a.contacts-texts__link {
     .equipment-list__item {
         width: 207px;
         height: 246px;
+    }
+
+    .next-dates-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .routes-cat__item:first-of-type {
+        padding-left: 14px;
+    }
+
+    .route-item.item-2, .route-item.item2-2 {
+        right: 0;
+    }
+
+    .routes-wrap {
+        gap: 5rem;
+    }
+
+    .routes-list {
+        flex-wrap: wrap;
+    }
+
+    .routes-list {
+        justify-content: flex-start;
+    }
+
+    .left-image__texts.right-image-text-block {
+        width: 100%;
+        max-width: 735px;
+        margin-left: 0;
+    }
+
+    .routes-box__text p {
+        font-size: 17px;
     }
 }
 
@@ -2999,6 +3175,43 @@ a.contacts-texts__link {
     .action-item__gift svg {
         width: 80px;
     }
+
+    .route-date {
+        padding-top: 48px;
+        padding-bottom: 0;
+    }
+
+    .route-date__text {
+        margin-bottom: 1.3rem;
+    }
+
+    .routes-cat__item {
+        padding: 0 14px;
+    }
+
+    .routes-cat__item a {
+        font-size: 16px;
+    }
+
+    .left-image__wrap .right-wrap__image {
+        display: none;
+    }
+
+    .left-image-item__title p {
+        font-size: 16px;
+    }
+
+    .left-image__text p:not(:last-of-type) {
+        margin-bottom: 1.2rem;
+    }
+
+    .left-image__text p {
+        font-size: 16px;
+    }
+
+    .routes-box__text p {
+        font-size: 16px;
+    }
 }
 
 @media (max-width:767px) {
@@ -3263,7 +3476,7 @@ a.contacts-texts__link {
     }
 
     .route-params.single {
-        padding: 30px 20px;
+        padding: 60px 20px 30px;
     }
 
     .single .route-params__item::before {
@@ -3416,6 +3629,51 @@ a.contacts-texts__link {
     .contacts-wrap {
         grid-template-columns: 1fr;
     }
+
+    .route-date {
+        padding-top: 48px;
+        padding-bottom: 0;
+    }
+
+    .route-date__text {
+        margin-bottom: 1.3rem;
+    }
+
+    .routes-cat__item {
+        padding: 0 14px;
+    }
+
+    .routes-cat__item a {
+        font-size: 16px;
+    }
+
+    .left-image__wrap .right-wrap__image {
+        height: 292px;
+        margin-bottom: -75px;
+        margin-top: -20px;
+        width: fit-content;
+        margin-left: auto;
+    }
+
+    .left-image__text {
+        max-width: 100%;
+    }
+
+    .left-image-item__title p {
+        font-size: 16px;
+    }
+
+    .left-image__text p:not(:last-of-type) {
+        margin-bottom: 1.2rem;
+    }
+
+    .left-image__text p {
+        font-size: 16px;
+    }
+
+    .routes-box__text p {
+        font-size: 16px;
+    }
 }
 
 @media (max-width:767px) and (max-height:420px) {
@@ -3463,6 +3721,12 @@ a.contacts-texts__link {
 
     .archive-routes-list .route-item {
         width: 312px;
+    }
+}
+
+@media (max-width:660px) {
+    .next-dates-list {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -3610,6 +3874,10 @@ a.contacts-texts__link {
 
     .actions__btns.col-auto {
         width: 100% !important;
+    }
+
+    .routes-box__text p {
+        font-size: 15px;
     }
 }
 

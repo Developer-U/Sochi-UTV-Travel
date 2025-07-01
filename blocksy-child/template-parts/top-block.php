@@ -11,20 +11,20 @@ $page_id = get_the_ID();
 $fields_prefix = is_archive() ? 'options' : $page_id;
 $fields_index = is_archive() ? '_' . $page_id : '';
 $top_block_title = is_archive() ? get_the_archive_title('') : get_the_title();
+$route_current_date = get_field('route_current_date', $page_id);
 $post_type = get_post_type();
-if ( $post_type )
-{
-    $post_type_data = get_post_type_object( $post_type );
-    $post_type_slug = $post_type_data->rewrite['slug'];    
+if ($post_type) {
+    $post_type_data = get_post_type_object($post_type);
+    $post_type_slug = $post_type_data->rewrite['slug'];
 }
 
-if(is_singular() || is_page()) {
+if (is_singular() || is_page()) {
     $archive_image = wp_get_attachment_url(get_post_thumbnail_id()); // Если это страница или Single типа постов - берём миниатюру страницы / поста
 } else {
-    $archive_image = get_field('archive_image_' .$post_type_slug, 'options'); // Архивная страница 
-} 
-$top_block_right_side_image = get_field('top_block_right_side_image', 'options');
-$top_block_right_side_underground = get_field('top_block_right_side_underground', 'options');
+    $archive_image = get_field('archive_image_' . $post_type_slug, 'options'); // Архивная страница 
+}
+$top_block_right_side_image = get_field('top_block_right_side_image', $page_id);
+$top_block_right_side_underground = get_field('top_block_right_side_underground', $page_id);
 $top_block_actions_image = get_field('top_block_actions_image', 'options');
 ?>
 
@@ -65,7 +65,7 @@ if ($archive_image) { ?>
 
         <div class="<?php if (is_page('gallery')) { ?>container-fluid<?php } else { ?>container<?php } ?>">
             <h1 class="top-box__title">
-                <?php                
+                <?php
                 echo $top_block_title; ?>
             </h1>
             <!-- breadcrumbs -->
@@ -79,6 +79,15 @@ if ($archive_image) { ?>
             <!-- breadcrumbs end -->
         </div>
 
-        <?php get_template_part('template-parts/social'); ?>
+        <?php     
+        if ($route_current_date['start'] || $route_current_date['end']) {
+            echo '<div class="go-to-box d-flex align-items-center justify-content-between justify-content-lg-end">';
+            echo '<a href="#dates_' . $page_id . ' " class="button go-to-box__btn d-lg-none">Смотреть даты</a>';
+            get_template_part('template-parts/social');
+            echo '</div>';
+        } else {
+            get_template_part('template-parts/social');
+        }
+        ?>
     </div>
 </section>

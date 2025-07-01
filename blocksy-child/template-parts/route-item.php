@@ -18,8 +18,6 @@ if (is_archive('routes')) {
                 <div class="route-item__excerpt">
                     <?php the_excerpt(); ?>
                 </div>
-
-                <?php get_template_part('template-parts/route', 'params'); ?>
             </div>
 
             <div class="archive-route__bottom">

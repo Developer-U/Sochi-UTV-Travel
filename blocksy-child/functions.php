@@ -45,3 +45,37 @@ require get_stylesheet_directory() . '/includes/duplicate-types.php';
  * Добавим произвольные типы записей
  */
 require get_stylesheet_directory() . '/includes/post-types.php';
+
+
+// 1. создаем новую колонку Категория
+
+add_filter('manage_' . 'routes' . '_posts_columns', 'add_views_column', 2);
+
+function add_views_column($columns)
+{
+
+	// вставляем в нужное место - 3 - 3-я колонка
+	$out = array();
+	foreach ($columns as $col => $name) {
+		if (++$i == 3)
+			$out['taxonomy_name'] = 'Категория';
+		$out[$col] = $name;
+	}
+
+	return $out;
+}
+
+// 2. заполняем колонку данными.
+
+add_action('manage_' . 'routes' . '_posts_custom_column', 'fill_views_column', 5, 2);
+function fill_views_column($column, $post_id)
+{
+	$taxonomy = 'routes-tax';
+	$terms = get_the_terms( $post_id, $taxonomy );
+
+	if ($column === 'taxonomy_name') {	
+		foreach ($terms as $term) {
+			echo $term->name;
+		}
+	}
+}

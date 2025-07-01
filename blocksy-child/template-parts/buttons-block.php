@@ -11,7 +11,8 @@ $page_id = get_the_ID();
 $button_first = get_field('button_first', $page_id);
 $button_second = get_field('button_second', $page_id);
 $button_third = get_field('button_third', $page_id);
-if (($button_first['title'] && $button_first['link']) || ($button_second['title'] && $button_second['link']) || ($button_third['title'] && $button_third['link'])) {
+$button_fourth = get_field('button_fourth', $page_id);
+if (($button_first['title'] && $button_first['link']) || ($button_second['title'] && $button_second['link']) || ($button_third['title'] && $button_third['link']) || ($button_fourth['title'] && $button_fourth['link'])) {
     ?>
 
     <div class="social-buttons-block d-flex align-items-center">
@@ -31,6 +32,9 @@ if (($button_first['title'] && $button_first['link']) || ($button_second['title'
             }
             if ($button_third['title'] && $button_third['link']) {
                 echo '<a class="button dark-green d-none d-md-flex" href=" ' . $button_third['link'] . ' " target="_blank">' . $button_third['title'] . '</a>';
+            }
+            if ($button_fourth['title'] && $button_fourth['link']) {
+                echo '<a class="button dark-green d-none d-md-flex" href=" ' . $button_fourth['link'] . ' " target="_blank">' . $button_fourth['title'] . '</a>';
             }
             ?>
         </div>

@@ -10,9 +10,10 @@ if (!defined('ABSPATH')) {
 
 /*ACF fields*/
 $page_id = get_the_ID();
+$block_visibility = get_field('block_visibility', $page_id);
 $technics_title = is_archive() ? 'Наша техника' : get_field('technics_title', $page_id);
 
-if (have_rows('new_technics', 'options')) {
+if (have_rows('new_technics', 'options') && $block_visibility !== 'скрыть') {
     ?>
     <section id="technics" class="technics">
         <div class="container">            
