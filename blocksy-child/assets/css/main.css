@@ -647,6 +647,12 @@
     max-height: 2000px;
 }
 
+.route-tabs-wrap {
+    padding: 20px 10px;
+    border-radius: 14px;
+    border: 1px solid var(--dark_green);
+}
+
 /*Routes end*/
 
 

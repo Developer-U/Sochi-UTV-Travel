@@ -68,8 +68,7 @@ get_template_part('template-parts/top', 'block');
         <div class="container">
             <?php
             if ($media_title) {
-                echo '<h2 data-aos="fade-right" data-aos-offset="0" data-aos-delay="0" data-aos-duration="1300"
-                data-aos-easing="ease-in-out" data-aos-once="true" data-aos-anchor-placement="top-left" class="big-title media__title">' . $media_title . '</h2>';
+                echo '<h2 class="big-title media__title">' . $media_title . '</h2>';
             }
             ?>
 
@@ -108,6 +107,8 @@ get_template_part('template-parts/block', 'technics');
 get_template_part('template-parts/route', 'geographics');
 
 get_template_part('template-parts/advantages');
+
+get_template_part('template-parts/block', 'faq');
 
 get_template_part('template-parts/block', 'cta2');
 

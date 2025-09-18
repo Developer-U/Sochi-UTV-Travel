@@ -29,7 +29,7 @@ if (!defined('ABSPATH')) {
             <?php } ?>
 
             <!-- Раздел фото -->
-            <article class="gallery-tab-target__target js-targetTabs gallery-tab-target active" data-target="0"
+            <article class="gallery-tab-target__target js-targetTabs js-tabMore gallery-tab-target active" data-target="0"
                 data-tabTargetReprep="galery_0">
                 <?php
                 $gallery_content_field = 'photo';
@@ -105,7 +105,7 @@ if (!defined('ABSPATH')) {
             </article>
 
             <!-- Раздел видео -->
-            <article class="gallery-tab-target__target js-targetTabs gallery-tab-target" data-target="1"
+            <article class="gallery-tab-target__target js-targetTabs js-tabMore gallery-tab-target" data-target="1"
                 data-tabTargetReprep="galery_1">
                 <?php
                 $gallery_content_field = 'video';

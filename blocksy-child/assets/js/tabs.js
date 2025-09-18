@@ -25,6 +25,9 @@ window.addEventListener('DOMContentLoaded', function(){
                 let cleanHash = hash.replace('#', ''); // Убираем из hash решётку чтобы сравнить               
 
                 var hashBtn =  document.querySelector(`[data-tabpathrep='${cleanHash}']`); // вставляем нужный атрибут и активируем
+
+                console.log(cleanHash);
+                console.log(hashBtn);
              
                 hashBtn.classList.add('active');  
               

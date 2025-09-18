@@ -26,7 +26,7 @@ if ($contains_title) { ?>
         <div class="container">
             <?php
             if ($contains_title) { ?>
-                <h2 class="right-image__title" data-aos="fade-left" data-aos-offset="0" data-aos-delay="50"
+                <h2 class="right-image__title" data-aos="fade-left" data-aos-offset="0" data-aos-delay="0"
                     data-aos-duration="800" data-aos-easing="linear" data-aos-once="true"
                     data-aos-anchor-placement="bottom-left"><?php echo $contains_title; ?></h2>
             <?php }

@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', function(){
     // });
 
     /*Load more button*/
-    const Wrappers = document.querySelectorAll('.js-targetTabs'); // Родитель постов   
+    const Wrappers = document.querySelectorAll('.js-tabMore'); // Родитель постов   
 
     Wrappers.forEach(function(Wrapper){
         var all_posts_wrapper = Wrapper.querySelector('.gallery-tab-list');  

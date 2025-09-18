@@ -46,6 +46,11 @@ require get_stylesheet_directory() . '/includes/duplicate-types.php';
  */
 require get_stylesheet_directory() . '/includes/post-types.php';
 
+/*
+ * Шорткоды
+ */
+require get_stylesheet_directory() . '/includes/shortcodes.php';
+
 
 // 1. создаем новую колонку Категория
 
@@ -71,9 +76,9 @@ add_action('manage_' . 'routes' . '_posts_custom_column', 'fill_views_column', 5
 function fill_views_column($column, $post_id)
 {
 	$taxonomy = 'routes-tax';
-	$terms = get_the_terms( $post_id, $taxonomy );
+	$terms = get_the_terms($post_id, $taxonomy);
 
-	if ($column === 'taxonomy_name') {	
+	if ($column === 'taxonomy_name') {
 		foreach ($terms as $term) {
 			echo $term->name;
 		}
