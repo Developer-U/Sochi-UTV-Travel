@@ -202,3 +202,42 @@ function routes()
   register_post_type('routes', $args);
 }
 
+/* Регистрируем новый тип записей - Партнёры
+-----------------------------------------------*/
+add_action('init', 'partners');
+function partners()
+{
+  $labels = array(
+    'name' => 'Наши партнёры',
+    'singular_name' => 'Партнёр',
+    'add_new' => 'Добавить партнёра',
+    'add_new_item' => 'Добавить партнёра',
+    'edit_item' => 'Редактировать партнёра',
+    'new_item' => 'Новый партнёр',
+    'view_item' => 'Посмотреть данные партнёра',
+    'search_items' => 'Найти партнёра',
+    'not_found' => 'Партнёров не найдено',
+    'not_found_in_trash' => 'В корзине партнёров не найдено',
+    'parent_item_colon' => '',
+    'menu_name' => 'Наши партнёры'
+  );
+
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'menu_icon' => 'dashicons-buddicons-buddypress-logo',
+    'publicly_queryable' => true,
+    'show_ui' => true,
+    'show_in_menu' => true,
+    'query_var' => true,
+    'rewrite' => true,
+    'capability_type' => 'post',
+    'has_archive' => true,
+    'hierarchical' => true,
+    'menu_position' => 7,
+    'supports' => array('title', 'editor', 'thumbnail', 'custom-fields'),
+
+  );
+  register_post_type('partners', $args);
+}
+

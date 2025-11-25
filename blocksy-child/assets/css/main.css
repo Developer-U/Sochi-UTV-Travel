@@ -430,9 +430,13 @@
     z-index: 3;
 }
 
-.route-item, .action-item {
+.route-item, .action-item, .partner-item {
     border: 1px solid var(--black);
     padding: 43px 58px;
+}
+
+.partner-item {
+    padding: 65px 58px;
 }
 
 .route-item__action {
@@ -448,7 +452,7 @@
     right: -2vw;
 }
 
-.route-item::after, .action-item::after {
+.route-item::after, .action-item::after, .partner-item::after {
     content: "";
     display: block;
     position: absolute;
@@ -459,13 +463,17 @@
     background: linear-gradient(to bottom, var(--white) 30%, transparent);
 }
 
+.partner-item::after {
+    background: linear-gradient(to bottom, var(--white) 40%, rgba(265, 265, 265, .5));
+}
+
 .archive-route {
     height: 100%;
     grid-template-rows: 1fr auto;
     gap: 26px;
 }
 
-.archive-routes-list {
+.archive-routes-list, .archive-partners-list {
     column-gap: 12px;
     row-gap: 42px;
     flex-wrap: wrap;
@@ -493,6 +501,11 @@
     font-size: 14px;
     font-family: var(--gotham_medium);
     line-height: 120%;
+}
+
+.route-item__excerpt_partners p {
+    font-size: 20px;
+    line-height: 140%;
 }
 
 .route-item__excerpt p:not(:last-of-type) {
@@ -1278,6 +1291,10 @@ a.footer-down__item, .footer-down__item a {
     position: relative;
 }
 
+.post-type-archive .top-block {
+    background-position: top center;
+}
+
 .top-box {
     gap: 20px;
     min-height: 42vh;
@@ -1868,8 +1885,12 @@ a.contacts-texts__link {
         grid-template-columns: repeat(2, 323px);
     }
 
-    .route-item {
+    .route-item, .partner-item {
         padding: 40px 44px;
+    }
+
+    .partner-item {
+        padding: 50px 44px;
     }
 
     .routes-bg__image {
@@ -2378,6 +2399,10 @@ a.contacts-texts__link {
 
     .archive-routes-list .route-item__excerpt p {
         font-size: 12px;
+    }
+
+    .route-item__excerpt_partners p {
+        font-size: 18px;
     }
 
     .cta-form__form2 .cta-form__title {
@@ -3229,6 +3254,10 @@ a.contacts-texts__link {
         margin-left: 0;
     }
 
+    .post-type-archive .top-block {
+        background-position: top left;
+    }
+
     .gold-bar-text, .right-wrap {
         width: 100%;
     }
@@ -3759,6 +3788,10 @@ a.contacts-texts__link {
 
     .route-item {
         padding: 36px 20px;
+    }
+
+    .partner-item {
+        padding: 40px 20px;
     }
 
     .meals__title {
