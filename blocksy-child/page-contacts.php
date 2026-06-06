@@ -75,7 +75,39 @@ get_header();
     </div>
 </section>
 
+<?php if (have_rows('new_requizittes_item', 'options')) { ?>
+    <section class="contacts__requizittes requizittes">
+        <div class="container">
+            <h2 class="requizittes__title">
+                Реквизиты
+            </h2>
+
+            <ul class="requizittes__list requiz-list">
+                <?php if (have_rows('new_requizittes_item', 'options')) {
+                    while (have_rows('new_requizittes_item', 'options')) {
+                        the_row();
+                        $requiz_name = get_sub_field('requiz_name', 'options');
+                        $requiz_text = get_sub_field('requiz_text', 'options');
+                        ?>
+
+                        <li class="reqiuz-list__item requiz-item grid grid-two">
+                            <p class="requiz-item__title fw-bold">
+                                <?php echo $requiz_name; ?>
+                            </p>
+
+                            <p class="requiz-list__text">
+                                <?php echo $requiz_text; ?>
+                            </p>
+                        </li>
+                        <?php
+                    }
+                } ?>
+            </ul>
+        </div>
+    </section>
+<?php } ?>
+
 <?php
-get_template_part('template-parts/block', 'cta2'); 
+get_template_part('template-parts/block', 'cta2');
 
 get_footer();
